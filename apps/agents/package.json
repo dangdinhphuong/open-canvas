@@ -12,8 +12,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev"  : "echo \"Starting dev LangGraphJS on port $PORT...\" && yarn langgraphjs dev --port $PORT --config ../../langgraph.json --no-browser",
-    "start": "echo \"Starting prod LangGraphJS on port $PORT...\" && ./node_modules/.bin/langgraphjs up --port $PORT --config ./langgraph.json",
+    "dev": "echo \"Starting dev LangGraphJS on port $PORT...\" >> server.log && yarn langgraphjs dev --port $PORT --config ../../langgraph.json --no-browser >> server.log 2>&1",
+    "start": "echo \"Starting prod LangGraphJS on port $PORT...\" >> server.log && ./node_modules/.bin/langgraphjs up --port $PORT --config ./langgraph.json >> server.log 2>&1",
     "build": "yarn clean && tsc",
     "clean": "rm -rf ./dist .turbo || true",
     "format": "prettier --config .prettierrc --write \"src\" \"scripts\"",
